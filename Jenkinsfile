@@ -15,7 +15,7 @@ pipeline {
     }
     environment {
         TRAIN_NAME = "2022-06"
-        STAGING_DIR = "/home/data/httpd/download.eclipse.org/staging/${TRAIN_NAME}"
+        STAGING_DIR = "/home/data/httpd/download.eclipse.org/justj/archive/staging/${TRAIN_NAME}"
     }
     stages {
         stage('Validate') {
@@ -33,7 +33,7 @@ pipeline {
             // ClassCastException - see https://github.com/eclipse/tycho/issues/350
             steps {
                 // No clean here or the repo will be deleted!
-                sh 'mvn verify -Pfix-p2-repository'
+                // sh 'mvn verify -Pfix-p2-repository'
             }
         }
         stage('Deploy to staging') {
@@ -46,14 +46,14 @@ pipeline {
                 sh 'cp -R ${WORKSPACE}/target/repository/final/* ${STAGING_DIR}/'
                 sh 'ls -al ${STAGING_DIR}'
                 // Trigger EPP job
-                sh 'curl "https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/buildWithParameters?delay=600sec&token=Yah6CohtYwO6b?6P"'
+                sh 'echo curl "https://ci.eclipse.org/packaging/job/simrel.epp-tycho-build/buildWithParameters?delay=600sec&token=Yah6CohtYwO6b?6P"'
             }
          }
-         stage('Start repository analysis') {
-            steps {
-                build job: 'simrel.oomph.repository-analyzer.test', parameters: [booleanParam(name: 'PROMOTE', value: true)], wait: false
-            }
-         }
+//         stage('Start repository analysis') {
+//            steps {
+//                build job: 'simrel.oomph.repository-analyzer.test', parameters: [booleanParam(name: 'PROMOTE', value: true)], wait: false
+//            }
+//         }
     }
     post {
         failure {
@@ -62,7 +62,7 @@ pipeline {
               body: """FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':
               Check console output at ${env.BUILD_URL}""",
               recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-              to: 'frederic.gurr@eclipse-foundation.org ed.merks@eclipse-foundation.org'
+              to: 'ed.merks@eclipse-foundation.org'
             )
           archiveArtifacts artifacts: 'target/eclipserun-work/configuration/*.log', allowEmptyArchive: true
         }

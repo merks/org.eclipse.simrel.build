@@ -10,7 +10,7 @@
     <trainName>2022-06</trainName>
     <referenceRepo>releases/2022-03/202203161000</referenceRepo>
     <eclipse.repo.url>https://download.eclipse.org/eclipse/updates/4.23/R-4.23-202203080310</eclipse.repo.url>
-    <simrel.aggregator.repo.url>https://download.eclipse.org/cbi/updates/aggregator/headless/4.13/</simrel.aggregator.repo.url>
+    <simrel.aggregator.repo.url>https://download.eclipse.org/justj/archive/cbi/updates/p2-aggregator/products/nightly/latest</simrel.aggregator.repo.url>
     <cbi.analyzers.repo.url>https://download.eclipse.org/cbi/updates/analyzers/4.7</cbi.analyzers.repo.url>
     <simrel.aggregator.build.type>CLEAN_BUILD</simrel.aggregator.build.type>
   </properties>
@@ -137,8 +137,8 @@
                     <arg>org.eclipse.cbi.p2repo.analyzers.repoReport</arg>
                   </applicationsArgs>
                   <jvmArgs>
-                    <jvmArg>-DreportRepoDir=/home/data/httpd/download.eclipse.org/staging/${trainName}</jvmArg>
-                    <jvmArg>-DreportOutputDir=/home/data/httpd/download.eclipse.org/staging/${trainName}/buildInfo</jvmArg>
+                    <jvmArg>-DreportRepoDir=/home/data/httpd/download.eclipse.org/justj/archive/staging/${trainName}</jvmArg>
+                    <jvmArg>-DreportOutputDir=/home/data/httpd/download.eclipse.org/justj/archive/staging/${trainName}/buildInfo</jvmArg>
                     <jvmArg>-DreferenceRepo=/home/data/httpd/download.eclipse.org/${referenceRepo}</jvmArg>
                     <jvmArg>-Xms256M</jvmArg>
                     <jvmArg>-Xmx2048M</jvmArg>
