@@ -68,7 +68,7 @@
   <setupTask
       xsi:type="git:GitCloneTask"
       id="git.clone.org.eclipse.simrel.build.fork"
-      remoteURI="merks/org.eclipse.simrel.build.git">
+      remoteURI="merks/org.eclipse.simrel.build">
     <annotation
         source="http://www.eclipse.org/oomph/setup/InducedChoices">
       <detail
