@@ -15,7 +15,7 @@ pipeline {
     }
     environment {
         TRAIN_NAME = "2022-06"
-        STAGING_DIR = "/home/data/httpd/download.eclipse.org/justj/archive/staging/${TRAIN_NAME}"
+        STAGING_DIR = "/home/data/httpd/download.eclipse.org/modeling/emf/emf/archive/staging/${TRAIN_NAME}"
     }
     stages {
         stage('Validate') {
