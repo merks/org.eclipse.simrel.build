@@ -41,7 +41,7 @@ pipeline {
                 // Create staging dir (if it does not exist already)
                 sh 'mkdir -p ${STAGING_DIR}'
                 // Clean staging dir
-                sh 'echo rm -rf ${STAGING_DIR}/*'
+                sh 'rm -rf ${STAGING_DIR}/*'
                 // Copying files to staging dir
                 sh 'cp -R ${WORKSPACE}/target/repository/final/* ${STAGING_DIR}/'
                 sh 'ls -al ${STAGING_DIR}'

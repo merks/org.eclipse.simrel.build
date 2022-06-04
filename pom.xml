@@ -269,6 +269,10 @@
                   </includes>
                   <replacements>
                     <replacement>
+                      <token>http://download.eclipse.org</token>
+                      <value>file:/home/data/httpd/download.eclipse.org</value>
+                    </replacement>
+                    <replacement>
                       <token>https://download.eclipse.org</token>
                       <value>file:/home/data/httpd/download.eclipse.org</value>
                     </replacement>
