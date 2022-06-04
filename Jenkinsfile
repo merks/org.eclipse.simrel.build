@@ -33,7 +33,7 @@ pipeline {
             // ClassCastException - see https://github.com/eclipse/tycho/issues/350
             steps {
                 // No clean here or the repo will be deleted!
-                // sh 'mvn verify -Pfix-p2-repository'
+                sh 'echo mvn verify -Pfix-p2-repository'
             }
         }
         stage('Deploy to staging') {
