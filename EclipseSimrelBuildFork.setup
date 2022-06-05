@@ -113,7 +113,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.org.eclipse.simrel.build.fork"
-        value="=https://raw.githubusercontent.com/merks/org.eclipse.simrel.build.git/master/EclipseSimrelBuildFork.setup->${git.clone.org.eclipse.simrel.build.fork.location|uri}//EclipseSimrelBuildFork.setup"
+        value="=https://raw.githubusercontent.com/merks/org.eclipse.simrel.build/main/EclipseSimrelBuildFork.setup->${git.clone.org.eclipse.simrel.build.fork.location|uri}/EclipseSimrelBuildFork.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
