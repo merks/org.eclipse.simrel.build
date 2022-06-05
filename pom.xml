@@ -276,6 +276,14 @@
                       <token>https://download.eclipse.org</token>
                       <value>file:/home/data/httpd/download.eclipse.org</value>
                     </replacement>
+                    <replacement>
+                      <token>http://archive.eclipse.org</token>
+                      <value>file:/home/data/httpd/archive.eclipse.org</value>
+                    </replacement>
+                    <replacement>
+                      <token>https://archive.eclipse.org</token>
+                      <value>file:/home/data/httpd/archive.eclipse.org</value>
+                    </replacement>
                   </replacements>
                 </configuration>
               </execution>
