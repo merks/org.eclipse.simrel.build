@@ -57,13 +57,6 @@
                     <jvmArg>-Xmx2048M</jvmArg>
                   </jvmArgs>
                   <repositories>
-<!--
-                    <repository>
-                      <id>eclipse</id>
-                      <url>${eclipse.repo.url}</url>
-                      <layout>p2</layout>
-                    </repository>
--->
                     <repository>
                       <id>simrel-aggregator</id>
                       <url>${simrel.aggregator.repo.url}</url>
@@ -218,13 +211,6 @@
                   </jvmArgs>
                   <executionEnvironment>JavaSE-11</executionEnvironment>
                   <repositories>
-<!--
-                    <repository>
-                      <id>eclipse</id>
-                      <url>${eclipse.repo.url}</url>
-                      <layout>p2</layout>
-                    </repository>
--->
                     <repository>
                       <id>simrel-aggregator</id>
                       <url>${simrel.aggregator.repo.url}</url>

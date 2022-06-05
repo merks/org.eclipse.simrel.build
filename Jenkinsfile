@@ -18,11 +18,11 @@ pipeline {
         STAGING_DIR = "/home/data/httpd/download.eclipse.org/modeling/emf/emf/archive/staging/${TRAIN_NAME}"
     }
     stages {
-        stage('Validate') {
-            steps {
-                sh 'mvn clean test -Pbuilt-at-eclipse.org -Pvalidate'
-            }
-        }
+//        stage('Validate') {
+//            steps {
+//                sh 'mvn clean test -Pbuilt-at-eclipse.org -Pvalidate'
+//            }
+//        }
         stage('Build clean') {
             steps {
                 sh 'mvn clean verify -Pbuilt-at-eclipse.org -Pbuild'
