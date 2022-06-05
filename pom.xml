@@ -10,9 +10,10 @@
     <tycho-version>2.7.2</tycho-version>
     <trainName>2022-06</trainName>
     <referenceRepo>releases/2022-03/202203161000</referenceRepo>
-    <eclipse.repo.url>https://download.eclipse.org/eclipse/updates/4.23/R-4.23-202203080310</eclipse.repo.url>
-    <simrel.aggregator.repo.url>https://download.eclipse.org/justj/archive/cbi/updates/p2-aggregator/products/nightly/latest</simrel.aggregator.repo.url>
-    <cbi.analyzers.repo.url>https://download.eclipse.org/cbi/updates/analyzers/4.7</cbi.analyzers.repo.url>
+    <download.eclipse.org>https://download.eclipse.org</download.eclipse.org>
+    <eclipse.repo.url>${download.eclipse.org}/eclipse/updates/4.23/R-4.23-202203080310</eclipse.repo.url>
+    <simrel.aggregator.repo.url>${download.eclipse.org}/justj/archive/cbi/updates/p2-aggregator/products/nightly/latest</simrel.aggregator.repo.url>
+    <cbi.analyzers.repo.url>${download.eclipse.org}/cbi/updates/analyzers/4.7</cbi.analyzers.repo.url>
     <simrel.aggregator.build.type>CLEAN_BUILD</simrel.aggregator.build.type>
   </properties>
 
@@ -240,6 +241,9 @@
     </profile>
     <profile>
       <id>built-at-eclipse.org</id>
+      <properties>
+        <download.eclipse.org>file:/home/data/httpd/download.eclipse.org</download.eclipse.org>
+      </properties>
       <build>
         <plugins>
           <plugin>
