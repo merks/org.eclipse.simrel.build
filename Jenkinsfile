@@ -22,7 +22,7 @@ pipeline {
         name: 'CBI_TYPE',
         choices: ['nightly/latest', 'milestone/latest', 'release/latest'],
         description: '''
-          Choose the type of CBI p2 Aggregator tools build to use for aggregation, i.e., the relative path in the <a href="https://download.eclipse.org/cbi/updates/p2-aggregator/tools/">tools folder</a>.
+          Choose the type of CBI p2 Aggregator products build to use for aggregation, i.e., the relative path in the <a href="https://download.eclipse.org/cbi/updates/p2-aggregator/products/">products folder</a>.
           '''
       )
   
