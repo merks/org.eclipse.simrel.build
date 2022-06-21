@@ -14,9 +14,25 @@ pipeline {
         timestamps ()
     }
     environment {
-        TRAIN_NAME = "2022-06"
+        TRAIN_NAME = "2022-09"
         STAGING_DIR = "/home/data/httpd/download.eclipse.org/modeling/emf/emf/archive/staging/${TRAIN_NAME}"
     }
+    parameters {
+      choice(
+        name: 'CBI_TYPE',
+        choices: ['nightly/latest', 'milestone/latest', 'release/latest'],
+        description: '''
+          Choose the type of CBI p2 Aggregator tools build to use for aggregation, i.e., the relative path in the <a href="https://download.eclipse.org/cbi/updates/p2-aggregator/tools/">tools folder</a>.
+          '''
+      )
+  
+      booleanParam(
+        name: 'PROMOTE',
+        defaultValue: false,
+        description: 'Whether to promote the build to the download server.'
+      )
+    }
+ 
     stages {
 //        stage('Validate') {
 //            steps {
@@ -29,6 +45,11 @@ pipeline {
             }
         }
         stage('Deploy to staging') {
+            when {
+              expression {
+                params.PROMOTE
+              }
+            }
             steps {
                 // Create staging dir (if it does not exist already)
                 sh 'mkdir -p ${STAGING_DIR}'

@@ -3,16 +3,17 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.eclipse.simrel</groupId>
   <artifactId>build</artifactId>
-  <version>4.16.0-SNAPSHOT</version>
+  <version>4.25.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <properties>
-    <tycho-version>2.7.2</tycho-version>
+    <tycho-version>2.7.3</tycho-version>
     <trainName>2022-06</trainName>
-    <referenceRepo>releases/2022-03/202203161000</referenceRepo>
+    <referenceRepo>releases/2022-06/202206151000</referenceRepo>
     <download.eclipse.org>https://download.eclipse.org</download.eclipse.org>
-    <eclipse.repo.url>${download.eclipse.org}/eclipse/updates/4.23/R-4.23-202203080310</eclipse.repo.url>
-    <simrel.aggregator.repo.url>${download.eclipse.org}/justj/archive/cbi/updates/p2-aggregator/products/nightly/latest</simrel.aggregator.repo.url>
+    <eclipse.repo.url>${download.eclipse.org}/eclipse/updates/4.24/R-4.24-202206070700</eclipse.repo.url>
+    <simrel.aggregator.repo.url.relative>nightly/latest</simrel.aggregator.repo.url.relative>
+    <simrel.aggregator.repo.url>${download.eclipse.org}/cbi/updates/p2-aggregator/tools/${simrel.aggregator.repo.url.relative}</simrel.aggregator.repo.url>
     <cbi.analyzers.repo.url>${download.eclipse.org}/cbi/updates/analyzers/4.7</cbi.analyzers.repo.url>
     <simrel.aggregator.build.type>CLEAN_BUILD</simrel.aggregator.build.type>
   </properties>
